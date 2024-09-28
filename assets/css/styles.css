@@ -1,6 +1,6 @@
 /* Custom Styles */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Calibri', sans-serif;
   background-color: #f7f7f7;
   margin: 0;
   padding: 0;
@@ -8,29 +8,52 @@ body {
 
 /* Header Section with Background Image */
 .invitation-header {
-  height: 100vh;
-  background: url('https://images.unsplash.com/photo-1707270686208-5d1fc168dd7b?fit=crop&w=1500&q=80') no-repeat center center/cover;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1707270686208-5d1fc168dd7b?fit=crop&w=1500&q=80') no-repeat center center/cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column; /* Mengatur arah flex untuk menumpuk elemen secara vertikal */
 }
 
 .invitation-header h1 {
-  font-size: 3rem;
-  font-weight: bold;
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+}
+
+.invitation-header h2 {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.invitation-header ul {
+    text-align: left;
+    font-size: 1rem;
+    margin-bottom: -5px;
 }
 
 .invitation-header p {
-  font-size: 1.5rem;
-  font-style: italic;
+    font-size: 1rem;
+    margin-bottom: -5px;
+	text-align: left;
+	margin-bottom: 5px;
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Menambahkan margin bawah jika perlu */
+}
+
+.additional-text {
+	background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 20px; /* Memberikan jarak dari overlay */
+    padding: 5px;
+    color: yellow; /* Sesuaikan warna teks agar kontras dengan latar belakang */
+    text-align: center; /* Rata tengah */
 }
 
 .event-details {
