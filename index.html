@@ -1,74 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Undangan Digital</title>
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Undangan Silaturahmi FKCP</title>
 
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="icon" href="assets/images/pakposkeren.png" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Allura&family=Pacifico&family=Roboto:wght@400&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+	<link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-
-  <!-- Background Image Section -->
-  <section class="invitation-header" data-aos="fade-in">
-    <div class="overlay">
-      <h1>Undangan Silaturahmi & Perpisahan</h1>
-      <p>Forum Silaturahmi & Pergantian Pengurus Baru</p>
+	<section class="invitation-header" data-aos="fade-in">
+		<div class="overlay" data-aos="fade-up">
+			<h1 data-aos="slide-up">Undangan</h1>
+			<h2 data-aos="slide-up">( Forum Silaturahmi Kantor Cabang Pembantu - Yogyakarta )</h2>
+			<hr data-aos="slide-up">
+			<p>Kami dengan hormat mengundang Bapak/Ibu untuk hadir dalam acara :</p>
+			<ul data-aos="slide-up">
+				<li>Pertemuan Rutin FSKCP.</li>
+				<li>Pelepasan & Kenang-Kenangan Untuk Para Senior yang telah CBS.</li>
+				<li>Pembentukan Pengurus Baru FSKCP Periode 2024-2026.</li>
+			</ul>
+			<hr>
+			<i class="fas fa-arrow-up" data-aos="slide-up"></i><br>Scroll ke atas
     </div>
-  </section>
+    <div class="additional-text" data-aos="">
+        <p><marquee>Tekan 1x pada layar untuk memutar musik, & tekan 2x untuk menghentikan musik.</marquee></p>
+    </div>
+</section>
 
-  <!-- Event Details -->
   <section class="container event-details text-center mt-5" data-aos="fade-up">
-    <h2>Tanggal Acara</h2>
-    <p>Sabtu, 5 Oktober 2024<br>10.00 AM - Selesai</p>
+    <h2>Tanggal Acara :</h2>
+    <p>Hari : Sabtu, 5 Oktober 2024<br>Pukul : 15.00 - 18.00 WIB (Selesai)</p>
     
-    <h2>Lokasi Acara</h2>
-    <p>Aula Pertemuan Gedung A, Kota Jakarta</p>
+    <h2>Lokasi Acara :</h2>
+    <p>Mang Engking Soragan<br>
+	<a href="https://maps.app.goo.gl/jcr7yb736vfpoHVW8" target="blank" style="font-size:40px; color:red; margin-bottom:30px;"><i class="fas fa-map-marked-alt"></i></a><br>Klik untuk cek lokasi</p>
     
-    <h2>Konfirmasi Kehadiran</h2>
-    <form action="submit_rsvp.php" method="POST" class="rsvp-form">
-      <div class="mb-3">
-        <label for="name" class="form-label">Nama:</label>
-        <input type="text" class="form-control" id="name" name="name" required>
-      </div>
-      <div class="mb-3">
-        <label for="attending" class="form-label">Apakah Anda akan hadir?</label>
-        <select class="form-select" id="attending" name="attending" required>
-          <option value="Yes">Ya</option>
-          <option value="No">Tidak</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary rsvp-btn">Kirim</button>
-    </form>
+    <h2>Konfirmasi Kehadiran :</h2>
+	<form class="rsvp-form" id="rsvpForm">
+		<div class="mb-3">
+			<label for="name" class="form-label">Nama:</label>
+			<input type="text" class="form-control" id="name" name="name" required>
+		</div>
+		<div class="mb-3">
+			<label for="attending" class="form-label">Apakah Anda akan hadir?</label>
+			<select class="form-select" id="attending" name="attending" required>
+				<option value="Yes">Ya</option>
+				<option value="No">Tidak</option>
+			</select>
+		</div>
+		<button type="button" class="btn btn-primary rsvp-btn" id="sendWhatsApp">Kirim</button>
+	</form>
   </section>
 
-  <!-- Footer -->
   <footer class="text-center py-4">
     <p>&copy; 2024 Undangan Silaturahmi. Semua Hak Dilindungi</p>
   </footer>
 
-  <!-- Background Music -->
   <audio id="background-music" autoplay loop>
     <source src="assets/audio/epic-gamelan-instrumental-for-cinematic.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
 
-  <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Custom JS -->
   <script src="assets/js/script.js"></script>
 
+<script>
+    document.getElementById('sendWhatsApp').addEventListener('click', function() {
+        const name = document.getElementById('name').value;
+        const attending = document.getElementById('attending').value;
+
+        const message = `Konfirmasi Kehadiran:\nNama: ${name}\nHadir: ${attending}`;
+        const encodedMessage = encodeURIComponent(message);
+
+        const phoneNumber = '+6281392953926';
+        const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
+        window.open(url, '_blank');
+    });
+</script>
 </body>
 </html>
